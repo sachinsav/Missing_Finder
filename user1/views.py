@@ -8,6 +8,3 @@ from user2.views import User2
 class ReportOperation(ModelViewSet):
     queryset=Reports.objects.all()
     serializer_class=ReportSerializers
-
-
-    

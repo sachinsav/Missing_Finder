@@ -7,7 +7,7 @@ from time import sleep
 
 class Face():
     def run(self):
-        print(self.classify_face("test.jpg"))
+        print(self.classify_face(self,"test.jpg"))
     def get_encoded_faces(self):
         """
         looks through the faces folder and encodes all
@@ -15,7 +15,7 @@ class Face():
         """
         encoded = {}
 
-        for dirpath, dnames, fnames in os.walk("../media/faces"):
+        for dirpath, dnames, fnames in os.walk("../media/faces/"):
             for f in fnames:
                 if f.endswith(".jpg") or f.endswith(".png"):
                     face = fr.load_image_file("../media/faces/" + f)
@@ -37,7 +37,7 @@ class Face():
 
     def classify_face(self,im):
     
-        self.faces = self.get_encoded_faces()
+        self.faces = self.get_encoded_faces(self)
         self.faces_encoded = list(self.faces.values())
         self.known_face_names = list(self.faces.keys())
 
@@ -78,8 +78,4 @@ class Face():
             cv2.imshow('Video',self.img)
             if cv2.waitKey(1) & 0xFF == ord('q'):
                 return self.face_names 
-
-
- 
-
-Face().run()
+Face.run(Face)

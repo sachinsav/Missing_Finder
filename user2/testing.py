@@ -1,5 +1,5 @@
 class Test():
-    def pri(self):
+    def pri():
         print("hello from pri methode of test class")
 
 Test.pri()

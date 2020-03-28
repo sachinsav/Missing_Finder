@@ -16,16 +16,20 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from user1 import views
+from user2.views import User2,User2Detail
 from rest_framework import routers
 from django.conf import settings
 from django.conf.urls.static import static
 
 router=routers.DefaultRouter()
 router.register('api',views.ReportOperation,basename='api')
-router.register('check',views.User2,basename='check')
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(router.urls)),
+    # path('check/',User2.as_view()),
+    path('check/<int:id>/',User2Detail.as_view())
+    #path('',include('user2.urls')),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

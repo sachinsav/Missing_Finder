@@ -2,7 +2,7 @@
     "python.testing.unittestArgs": [
         "-v",
         "-s",
-        "./Missing_Finder",
+        ".",
         "-p",
         "*test.py"
     ],

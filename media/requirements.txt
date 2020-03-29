@@ -2,8 +2,10 @@ cmake
 dlib
 face_recognition
 numpy
-opencv-python
 libsm6
+libxext6
+libsrender-dev
 libxrender1
 libfontconfig1
 libice6
+opencv-python

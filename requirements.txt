@@ -16,7 +16,7 @@ numpy==1.18.1
 opencv-python==4.2.0.32
 Pillow==7.0.0
 pytz==2019.3
-PyYAML==5.3
+PyYAML==5.4
 render==1.0.0
 requests==2.23.0
 six==1.14.0
